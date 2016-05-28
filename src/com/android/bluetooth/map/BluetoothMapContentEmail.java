@@ -73,7 +73,6 @@ import java.util.HashMap;
 import java.util.List;
 import android.text.Html;
 import java.util.concurrent.atomic.AtomicLong;
-import com.android.emailcommon.provider.EmailContent.Message;
 
 @TargetApi(19)
 public class BluetoothMapContentEmail extends BluetoothMapContent {
@@ -1124,7 +1123,6 @@ public class BluetoothMapContentEmail extends BluetoothMapContent {
                 String where = setWhereFilter(folderElement, fi, ap);
 
                 if(!where.isEmpty()) {
-                    where += " AND "+ Message.FLAG_LOADED_SELECTION;
                     where += " order by " +BluetoothMapEmailContract.ExtEmailMessageColumns
                         .TIMESTAMP+" desc "+ limit;
                     if (D) Log.d(TAG, "msgType: " + fi.mMsgType + " where: " + where);
